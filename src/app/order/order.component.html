@@ -1,0 +1,229 @@
+
+<div class="container">
+  <h2>Order Food</h2>
+
+   <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  (click)="getData()" class="btn" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            <i ></i>
+            Breakfast</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+
+        <div class="panel-body">
+
+          <div class="container">
+<div class="col-sm-6">
+            <div class="card-deck">
+              <div class="card ">
+
+                <div class="card-body text-center">
+                  <table>
+                    <tr *ngFor="let resto of restaurants">
+
+                      <!-- <p class="card-text" style="font-size: 15pt;color: crimson;"> -->
+                       <a routerLink="dish" >{{resto.restaurantName}}</a>
+                      <!-- </p> --><br>
+                      <p style="text-align:left;">{{resto.address}}</p>
+                    </tr>
+                </table>
+                </div>
+              </div>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+     <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Lunch</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+
+              <div class="container">
+                  <div class="col-sm-6">
+                              <div class="card-deck">
+                                <div class="card ">
+                  
+                                  <div class="card-body text-center">
+                                    <table>
+                                      <tr *ngFor="let restaurant of restaurants">
+                                        <p class="card-text" style="font-size: 15pt;color: crimson;text-align: left">
+                                          <a routerLink="dish">{{restaurant.name}}</a>
+                                        </p>
+                                        <h6 style="text-align: left">{{restaurant.address}}</h6>
+                  
+                                      </tr>
+                  
+                                  </table>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+                  
+                            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Dinner</a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">Noodles</div>
+        </div>
+      </div>
+    </div> 
+
+
+
+ <!--<div class="conatiner">
+        <div class="row">
+          <div class="card text-info" style=" width:189px;background-color: gainsboro;">
+            <div class="col-sm-4">
+              <ul class="nav nav-tabs tabs-left " role="tablist">
+                
+                <li role="presentation" class="text-justify">
+                  <a href="#profile" style="text-decoration: none;" id="cfg" class="active action-box"
+                    aria-controls="profile" role="tab" data-toggle="tab">
+                    <h4>Breakfast</h4>
+                  </a></li>
+                <li role="presentation"><a href="#messages" style="text-decoration: none;" aria-controls="messages"
+                    role="tab" data-toggle="tab">
+                    <h4>Lunch</h4>
+                  </a></li>
+                <li role="presentation"><a href="#settings" style="text-decoration: none;" aria-controls="settings"
+                    role="tab" data-toggle="tab">
+                    <h4>Tiffin Service</h4>
+                  </a></li>
+                  <li role="presentation"><a href="#dinner" style="text-decoration: none;" aria-controls="dinner"
+                    role="tab" data-toggle="tab">
+                    <h4>Dinner</h4>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+  
+  
+          <div class="col-sm-9">
+            <div class="card ">
+              <div class="tab-content" style="     width: 938px;    
+                          ">
+
+
+                
+<div role="tabpanel" class="tab-pane active" id="profile" style="    background-color: red;">
+  
+    <div class="row">
+     <div class="col-md-4 text-dark">
+       <img src="assets/images/pizza.jpg" style="width:100%">
+     </div>
+
+     <div class="col-md-4 text-dark">
+
+       <h3>Pizza111111</h3>
+       <p>{{200|currency:"INR"}}</p>
+       <p></p>
+     </div>
+   </div> 
+ </div>
+
+
+             
+  
+
+
+                <div role="tabpanel" class="tab-pane" id="messages" style="    background-color: gainsboro;">
+  
+                   <div class="row">
+                    <div class="col-md-4 text-dark">
+                      <img src="assets/images/pizza.jpg" style="width:100%">
+                    </div>
+  
+                    <div class="col-md-4 text-dark">
+  
+                      <h3>Pizza</h3>
+                      <p>{{200|currency:"INR"}}</p>
+                      <p></p>
+                    </div>
+                  </div> 
+                </div>
+  
+                <div role="tabpanel" class="tab-pane" id="settings">
+  
+                    <div class="row">
+                     <div class="col-md-4 text-dark">
+                       <img src="assets/images/pizza.jpg" style="width:100%; background-color: red;">
+                     </div>
+   
+                     <div class="col-md-4 text-dark">
+   
+                       <h3>Pizza33333</h3>
+                       <p>{{200|currency:"INR"}}</p>
+                       <p></p>
+                     </div>
+                   </div> 
+                                      
+                    
+
+    <h2>Basic Card</h2>
+    <div class="card" >
+      <div class="card-body">
+         
+
+      </div>
+   
+  </div>
+                   
+                   <div class="row">
+                      <div class="col-md-4 text-dark">
+                      </div>
+    
+                      <div class="col-md-4 text-dark">
+    
+                       
+                        <p></p>
+                      </div>
+                    </div> 
+                 </div>
+                <div role="tabpanel" class="tab-pane" id="dinner" style="    background-color: gainsboro;">
+  
+                    <div class="row">
+                     <div class="col-md-4 text-dark">
+                       <img src="assets/images/pizza.jpg" style="width:100%">
+                     </div>
+   
+                     <div class="col-md-4 text-dark">
+   
+                       <h3>Pizza44444</h3>
+                       <p>{{200|currency:"INR"}}</p>
+                       <p></p>
+                     </div>
+                   </div> 
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   -->
+
+
+      </div>
+
+
+      

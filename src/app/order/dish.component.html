@@ -1,0 +1,178 @@
+<!-- <div class="card ">
+    <div class="card-body ">
+      <p class="card-text text-center" style="font-size: 20pt">Breakfast</p> 
+      <table class="table table-bordered">
+        <tbody>
+   -->
+
+
+           <!-- <a routerLink="dishId" data-toggle="modal" data-target="#dosa">Dosa</a> -->
+  
+  
+  <!--Today-->
+         
+          <div class="modal fade" id="proceed">
+            <div class="modal-dialog">
+              <div class="modal-content">
+  
+                 
+                <div class="modal-header">
+                  <h4 class="modal-title">Breakfast</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div> 
+  
+  
+                 <div class="container">
+                  <h2></h2>
+                  <table class="table ">
+                    <thead>
+                      <tr>
+                        <th>DishName</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                  
+                    <tbody>
+                      <!-- <tr *ngFor="let dish of dishes" > -->
+                        <!-- <td>{{dishes[0].dishName}}</td> -->
+                        <!-- <td>{{dishes[0].dishPrice}}</td> -->
+                        <td>{{dishes[0].dishName}}</td>
+                        <td>{{dishes[0].dishPrice}}</td>
+
+                        <td>
+                            <!-- <input  type="number" class="form-control" name="quant" id="quanti" value=1 [(ngModel)]="$quantity.quant">  -->
+                            <input type="number" class="input-group-field" name="quantity" value=1 >
+                         </td>
+                        <!-- <td>{{dishes[0].dishPrice*quantity}}</td>  -->
+                        
+                      <!-- </tr> -->
+                    </tbody>
+                  </table>
+                </div>
+                 <div class="modal-footer">
+                  <a routerLink="/checkout" class="btn btn-primary" data-dismiss="modal" id="proceed" (click)="addDish()">Proceed
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>  
+  
+         
+
+        <!-- </tbody>
+      </table>   
+   -->
+
+
+     
+   <!-- <div class="card-deck">
+      <div class="card col-sm-3">
+      
+          <img src="/assets/images/dosa2.jpg" class="card-img-top" width=200 />
+          <div class="card-body">
+
+            
+      
+                     
+                      <h4 class="">Breakfast</h4>
+                      
+      
+                   
+    
+      
+                 <div class="container">
+                                {{dishes[0].dishName}}
+                                {{dishes[0].dishPrice}}
+                                <input class="input-group-field" type="number" name="quantity" value="0">
+
+                    </div>
+                    <a routerLink="cart" data-toggle="modal" data-target="#proceed">Proceed to Cart</a>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="modal fade" id="proceed">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+        
+                       
+                      <div class="modal-header">
+                        <h4 class="modal-title">Breakfast</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div> 
+        
+                     
+      
+        
+                       <div class="container">
+                        <h2></h2>
+                        <table class="table ">
+                          <thead>
+                            <tr>
+                              <th>DishName</th>
+                              <th>Price</th>
+                              <th>Quantity</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr >
+                              <td>{{dishes[0].dishName}}</td>
+                              <td>{{dishes[0].dishPrice}}</td>
+                              <td>
+        
+                                  <input class="input-group-field" type="number" name="quantity" value="0">
+                                
+                              </td>
+                            </tr>
+                       
+        
+                          </tbody>
+                        </table>
+                      </div>
+    </div>
+    </div> -->
+   
+
+
+ <h2 style="text-align:center;">Breakfast</h2>
+ <div class="cardlayout" style="margin-top:20px;">
+ <div class="card-deck">
+     <div class="card">
+       <img class="card-img-top" src="/assets/images/dosa2.jpg" alt="Card image cap">
+       <div class="card-body">
+         <h5 class="card-title">{{dishes[0].dishName}}</h5>
+         <p class="card-text">Price : {{dishes[0].dishPrice | currency:"INR"}}</p>
+         <a routerLink="cartdetails" data-toggle="modal" class="btn btn-primary"  data-target="#proceed">Order Now</a>
+       </div>
+     </div>
+     <div class="card">
+       <img class="card-img-top" src="/assets/images/sandwich2.jpg" alt="Card image cap" height="175">
+       <div class="card-body">
+           <h5 class="card-title">{{dishes[1].dishName}}</h5>
+           <p class="card-text">Price : {{dishes[1].dishPrice | currency:"INR"}}</p>
+           <a href="#" class="btn btn-primary">Order Now</a>
+       </div>
+     </div>
+     <div class="card">
+       <img class="card-img-top" src="/assets/images/vadapav2.jpg" alt="Card image cap" height="175">
+       <div class="card-body">
+           <h5 class="card-title">{{dishes[2].dishName}}</h5>
+           <p class="card-text">Price : {{dishes[2].dishPrice | currency:"INR"}}</p>
+           <a href="#" class="btn btn-primary">Order Now</a>
+       </div>
+     </div>
+     <div class="card">
+         <img class="card-img-top" src="/assets/images/misalpav.jpeg" alt="Card image cap"  height="175">
+         <div class="card-body">
+             <h5 class="card-title">{{dishes[3].dishName}}</h5>
+             <p class="card-text">Price : {{dishes[3].dishPrice | currency:"INR"}}</p>
+             <a href="#" class="btn btn-primary">Order Now</a>
+         </div>
+       </div>
+   </div>
+ </div>
+
+

@@ -1,0 +1,304 @@
+<!-- <div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false">
+    Profile
+  </button>
+  <div class="dropdown-menu">
+    <a cnpmlass="dropdown-item" routerLink="profile">Profile</a>
+    <a class="dropdown-item" href="#">Settings</a>
+    <a class="dropdown-item" routerLink="home">Log out</a>
+
+  </div>
+</div> -->
+
+
+<div class="container">
+
+
+  <div class="p-3 mb-2  text-white">
+
+    <div class="container">
+      <br>
+      <div class="row justify-content-md-center" style="background-color: #f3eaea;">
+        <div class="col col-lg-2 ">
+          <br>
+          <!-- <img src="{{user.imageUrl}}" alt="..." class="rounded-circle" height="220px" width="200px"> -->
+          <br>
+          <br>
+        </div>
+
+
+
+
+        <div class="col-md-auto">
+
+        </div>
+
+        <div class="col col-lg-2 text-dark">
+          <br>
+          <br>
+          <br>
+          <br>
+          <h3>{{user.name}}</h3>
+          <span>
+            <img src="/assets/images/mapicon.png" height="20px" /> {{user.address.city}}
+          </span>
+          <br>
+        </div>
+        <br>
+      </div>
+      <br>
+    </div>
+    <br>
+    <br>
+
+
+
+
+    <div class="container">
+      <div class="row">
+
+
+        <div class="card text-info" style=" width:189px;background-color: #f3eaea;">
+          <div class="col-sm-4 ">
+            <ul class="nav nav-tabs tabs-left " role="tablist">
+              <li role="presentation" class="text-justify">
+                <a href="#profile" style="text-decoration: none;" id="cfg" class="active action-box" aria-controls="profile" role="tab" data-toggle="tab">
+                  <h4>Orders</h4>
+                </a>
+              </li>
+              <li role="presentation">
+                <a href="#messages" style="text-decoration: none;" aria-controls="messages" role="tab" data-toggle="tab">
+                  <h4>Favourites</h4>
+                </a>
+              </li>
+              <li role="presentation">
+                <a href="#settings" style="text-decoration: none;" aria-controls="settings" role="tab" data-toggle="tab">
+                  <h4>Addresses</h4>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="col-sm-9">
+          <div class="card ">
+            <div class="tab-content" style="     width: 938px;   background-color: #f3eaea;    
+                        ">
+              <div role="tabpanel" class="tab-pane active" id="profile" style="background-color: #f3eaea;">
+                <!-- <div *ngFor="let order of Orders"> -->
+
+                  <div class="container text-dark ">
+
+                    <div class="row">
+
+                      <div class="col-md-3">
+                        <br>
+                        <img src="{{order[1].imgUrl}}" height="150px" width="200px">
+                      </div>
+                      <div class="col-md-6 ">
+                        <br>
+                        <h4>{{order[1].dish}}
+
+
+                          <b class="text-info " style="float:right;padding-right: 10px;">{{order[1].status}}</b>
+                        </h4>
+                        <hr style="width:520px">
+                        <b>Order Id:</b>{{order[1].orderId}}
+                        <p>{{order[1].price |currency:"INR"}}</p>
+                        <h5>
+                          <b>Ratings: </b>
+                          <div [style.width.px]="starWidth" [style.overflow]=" 'hidden' ">
+                            <div style='width:120px' [style.color]="starColor">
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                            </div>
+
+                          </div>
+
+
+                        </h5>
+
+
+
+                        <div class="row">
+                          <div class="col-md-3">
+                            <h3>
+                              <input type="button" class="btn btn-warning" name="viewDetails" value="Reorder">
+                            </h3>
+                          </div>
+
+                          <div class="col-md-4">
+                            <h3>
+                              <input type="button" class="btn btn-warning btn-primary" data-toggle="modal" data-target="#exampleModalCenter"
+                                name="viewDetails" value="View Details">
+                            </h3>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+
+                                    <h3 class="modal-title" id="exampleModalLongTitle">
+
+                                      {{order[1].dish}}</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h5><b> Order Id: </b>{{order[1].orderId}} </h5>
+                                    <p> {{user.address.addressLine}}</p>
+                                    <hr>
+
+                                    <b>Ratings</b>
+                                    <p>{{order[1].rating}}</p>
+
+                                    <hr> {{user.comments}}
+                                    <hr>
+                                    <div class="modal-body">
+                                      {{order[1].price}}
+                                      <img src="./assets/images/cross.png" style="width: 8px;"> {{order[1].quantity}}
+                                      <p style="text-align:right">
+                                        <b>Total:</b>{{order[1].total}}</p>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-warning">Reorder</button>
+                                    </div>
+
+
+                                  </div>
+                                </div>
+                              </div>
+
+
+                            </div>
+                            <br>
+
+                          </div>
+
+                          <input type="button" class="btn btn-primary" style="float:right;padding-right:50px ;    height: 40px;
+                          " routerLink="feedback" value="feedback">
+
+                          <!-- <div class="col-md-5">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                              data-target="#exampleModal" style="float:right;padding-right:50px">
+                              Feedback
+                            </button>
+                          </div> -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h3 class="modal-title" id="exampleModalLabel">Feedback</h3>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="container">
+                                    <b>Ratings </b>
+                                    <fieldset class="rating">
+                                      <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
+                                      <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
+
+                                      <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
+                                      <label title="Pretty good" (click)='onClick(4)'>4 stars</label>
+
+                                      <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
+                                      <label title="Meh" (click)='onClick(3)'>3 stars</label>
+
+                                      <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
+                                      <label title="Kinda bad" (click)='onClick(2)'>2 stars</label>
+
+                                      <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
+                                      <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
+                                    </fieldset>
+
+
+                                    <!-- <img src="assets/images/star.jpeg" style="width: 80px;"> -->
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="comment">Comment:</label>
+                                        <textarea class="form-control" rows="5" id="comment" style="width:400px"></textarea>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Submit</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <br>
+
+
+                  </div>
+                  <hr>
+                <!-- </div> -->
+              </div>
+
+              <div role="tabpanel" class="tab-pane" id="messages" style="    background-color: #f3eaea;">
+
+                <div class="row">
+                  <div class="col-md-4 text-dark">
+                    <img src="assets/images/pizza.jpg" style="width:100%">
+                  </div>
+
+                  <div class="col-md-4 text-dark">
+
+                    <h3>{{order[1].dish}}</h3>
+                    <p>{{200|currency:"INR"}}</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+              <div role="tabpanel" class="tab-pane" id="settings">
+                <h3 class="text-dark" style="text-align: center">Address Details</h3>
+                <br>
+
+                <div class="container">
+                  <div class="row card-deck" style="width:80%;margin:0 Auto">
+                    <div class="card bg-light mb-6" style="max-width: 20rem;">
+                      <div class="card-header text-dark">Address 1</div>
+                      <div class="card-body">
+                        <p class="card-text text-dark">{{user.address.addressLine}}, {{user.address.city}}</p>
+                      </div>
+                    </div>
+                    <div class="card bg-light mb-6" style="max-width: 20rem;">
+                      <div class="card-header text-dark">Address 2</div>
+                      <div class="card-body">
+                        <p class="card-text text-dark"></p>
+                      </div>
+
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
